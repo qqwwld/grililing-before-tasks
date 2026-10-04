@@ -1,24 +1,30 @@
-# Agent Skills
+# grilling-before-tasks
 
 > English | [简体中文](./README.zh-CN.md)
 
-A collection of reusable **agent skills** for [opencode](https://opencode.ai). Each skill is a self-contained folder with a `SKILL.md` that teaches an agent how to do one thing reliably — clarify a problem, create a new skill, take learning notes, tutor, search the web, or clean up a Windows disk.
+Most failed tasks are not execution failures. They are specification failures — the work was done faithfully against an understanding that was never shared.
 
-## Skills
+**Grilling before tasks** is the habit of establishing that shared understanding *before* acting. These are three opencode skills that implement it, in order of depth.
 
-| Skill | What it does |
+## The three skills
+
+| Skill | When to use it |
 | --- | --- |
-| [`grilling`](./grilling) | Build shared understanding at the start of a project through structured interviewing, and record the result as a design document. Use when the task is unclear or user–AI understanding has drifted. |
-| [`grilling-simple`](./grilling-simple) | A lighter version: clarify the real problem behind a goal or difficulty and identify the most useful next step. |
-| [`skill-creator`](./skill-creator) | Create or refine agent skills. Decides whether a reusable skill is actually needed before writing one. |
-| [`learning-notes`](./learning-notes) | Turn learning records into Q&A notes that preserve the actual progression, doubts, and changes in understanding. |
-| [`tutor`](./tutor) | Adaptive, evidence-based tutoring for any subject. Teaches principles and independent application rather than imposing a fixed workflow. |
-| [`web-finder`](./web-finder) | Fast web search that opens promising results and hands back either the link you are after or an answer built from opened sources. |
-| [`disk-junk-scan`](./disk-junk-scan) | <div lang="zh-CN">扫描诊断 Windows 磁盘缓存/垃圾文件，分级报告。扫描阶段只读，删除必须经用户明确确认。</div> |
+| [`grilling-simple`](./grilling-simple) | **Triage.** You have a goal or a difficulty, but the real problem is still fuzzy. It identifies what actually needs solving and the single most useful next step. Lightest weight — use it by default. |
+| [`grilling`](./grilling) | **Depth.** Starting a project, or user and AI understanding have drifted. A structured interview that surfaces goal, constraints, trade-offs and unknowns, then records the result as a design document you can execute against. |
+| [`skill-creator`](./skill-creator) | **Codify.** The same clarity gap keeps recurring. It decides whether a reusable skill is actually justified, then writes the smallest one that changes behavior. |
+
+The progression: **triage → depth → codify.** Reach for `grilling-simple` first; escalate to `grilling` when the stakes justify it; promote a recurring pattern into a skill with `skill-creator`.
+
+## In progress
+
+[`in-progress/`](./in-progress) holds skills that are still being shaped and are not part of the core workflow: `disk-junk-scan`, `learning-notes`, `tutor`, `web-finder`.
+
+They ship in the repository but are deliberately not promoted to the top level.
 
 ## Installation
 
-Copy the skill folders you want into your opencode skills directory:
+Copy the three skills into your opencode skills directory:
 
 ```bash
 # Linux / macOS
@@ -28,26 +34,17 @@ cp -r grilling grilling-simple skill-creator ~/.config/opencode/skills/
 Copy-Item grilling, grilling-simple, skill-creator -Destination "$env:USERPROFILE\.config\opencode\skills\" -Recurse
 ```
 
-Or clone the whole repository and copy what you need:
+Restart opencode. Each skill is discovered from its `description` field — no need to invoke it by name.
 
-```bash
-git clone https://github.com/<your-username>/<repo-name>.git
-cd <repo-name>
-cp -r */ ~/.config/opencode/skills/
-```
-
-Restart opencode. The skills are picked up automatically from their `description` field — you do not need to invoke them by name.
-
-## Repository layout
+## Layout
 
 ```
-<skill-name>/
-├── SKILL.md          # Instructions the agent loads
-├── references/       # Optional supporting material
-└── scripts/          # Optional runnable scripts
+grilling-before-tasks/
+├── grilling/           # deep, structured clarification → design doc
+├── grilling-simple/    # light triage → real problem + next step
+├── skill-creator/      # turn recurring gaps into reusable skills
+└── in-progress/        # not yet promoted
 ```
-
-`scripts/` is only present where a skill needs to execute something. `disk-junk-scan` contains PowerShell scripts for scanning and cleaning; nothing runs without your explicit confirmation.
 
 ## License
 
