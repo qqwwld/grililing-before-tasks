@@ -24,14 +24,14 @@ One idea, three situations.
 **Option A — the `skills` CLI (installs to every agent you have):**
 
 ```bash
-npx skills add <owner>/<repo> -g -y -s grilling grilling-simple skill-creator
+npx skills add qqwwld/grililing-before-tasks -g -y -s grilling grilling-simple skill-creator
 ```
 
 **Option B — copy the folders yourself:**
 
 ```bash
-git clone https://github.com/<owner>/<repo>.git
-cp -r <repo>/grilling <repo>/grilling-simple <repo>/skill-creator ~/.agents/skills/
+git clone https://github.com/qqwwld/grililing-before-tasks.git
+cp -r grililing-before-tasks/grilling grililing-before-tasks/grilling-simple grililing-before-tasks/skill-creator ~/.agents/skills/
 ```
 
 Agents discover skills from a few standard locations:
