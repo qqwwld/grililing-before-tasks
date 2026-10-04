@@ -11,15 +11,15 @@ These three skills enforce the habit of establishing shared understanding *befor
 
 ## The three skills
 
-Reach for them in this order:
+One idea, three situations.
 
-| Skill | Stage | Use it when |
+| Skill | Reach for it when | You come away with |
 | --- | --- | --- |
-| [`grilling-simple`](./grilling-simple) | **Triage** | You have a goal or a difficulty, but the real problem is still fuzzy. Identifies what actually needs solving and the single most useful next step. Start here. |
-| [`grilling`](./grilling) | **Depth** | Starting a project, or you and the agent have drifted. A structured interview over goals, constraints, trade-offs and unknowns, recorded as a design doc you can execute against. |
-| [`skill-creator`](./skill-creator) | **Codify** | The same clarity gap keeps recurring. Decides whether a reusable skill is justified, then writes the smallest one that changes behavior. |
+| [`grilling`](./grilling) | A complex or long-running task is about to start, or you and the agent have drifted apart | A design doc — goal, constraints, blockers, execution path — that the agent executes against |
+| [`grilling-simple`](./grilling-simple) | You need to think a problem through quickly | The real problem, plus the single most useful next step |
+| [`skill-creator`](./skill-creator) | You are writing or revising a skill | A minimal skill, aligned before it is written |
 
-**Triage → Depth → Codify.** Escalate only when the stakes justify it; promote a recurring pattern into a skill.
+**The shared spine.** In all three: the agent finds the facts itself and brings you only decisions that need your judgment; one question at a time; reason backward from the goal; settle upstream questions before dependent ones. `skill-creator` is that same method pointed at authoring.
 
 ## Install
 
