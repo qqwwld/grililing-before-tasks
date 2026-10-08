@@ -7,14 +7,14 @@ Build enough shared understanding to support reliable execution and achieve the 
 
 Start from the conversation, project files, existing docs, code, tool results, and other available evidence. **Facts are the AI's job to find. Ask the user only for information that requires their intent, preference, judgment, trade-off, or decision.**
 
-First align the essential information:
+First align the essential information, don't give execution path before you align these information:
 
 - **Goal** — what the user actually wants to achieve
-- **Current state** — existing work, relevant facts, and current conditions
+- **Current state** — existing work, approaches and attempts, relevant facts, conditions, and available resources
 - **Constraints** — requirements and limits that affect the solution
 - **Output requirements** — what must ultimately be delivered
-- **Blockers** — what currently stands between the present state and the goal
-- **Execution path** — how to move from the current state to the goal
+- **Success criteria** — observable results that show the goal has been achieved
+- **Blockers** — what currently stands between the present state and the goal, including where the existing approach breaks down and the evidence for it
 
 Before each question, reason backward from the goal:
 
@@ -28,9 +28,11 @@ Ask **one question at a time**, then reassess based on the new answer and eviden
 
 When an important concept is ambiguous in a way that could affect execution, align its meaning with a concise example, contrast, boundary, or restatement.
 
+Before presenting an execution plan, summarize the design document's six aligned dimensions with assumptions and open questions, and wait for explicit user confirmation. After confirmation, compare feasible paths against the aligned goal, conditions, and bottleneck; recommend the best-supported path with its necessary scope and validation. Re-align direction-changing premises before finalizing; keep preliminary paths provisional.
+
 Do not change the user's goal, constraints, or confirmed decisions without explicit agreement.
 
-Maintain one concise design document using [the document format](references/design-doc.md). Record only information that materially helps achieve the goal or guide later execution: aligned goals, facts, constraints, output requirements, blockers, execution path, key decisions, and other necessary information.
+Maintain one concise design document using [the document format](references/design-doc.md). Record only information that materially helps achieve the goal or guide later execution: aligned goals, facts, constraints, output requirements, success criteria, blockers, execution path, key decisions, and other necessary information.
 
 Update the document when the shared understanding materially changes. Organize it according to the document format; do not mechanically summarize the conversation or preserve irrelevant discussion history.
 
